@@ -2,3 +2,6 @@
 - Bash
 - Git
 - Nos próximos dias aprenderemos sobre HTML e CSS
+- HTML
+- CSS
+
