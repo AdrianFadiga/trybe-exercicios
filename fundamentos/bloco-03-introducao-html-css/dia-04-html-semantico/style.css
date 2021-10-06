@@ -10,8 +10,8 @@ body {
 header {
   display: inline-block;
   text-align: center;
- background-color: orange;
- width: 100%; 
+  background-color: orange;
+  width: 100%;
 }
 
 nav {
@@ -26,7 +26,41 @@ nav li {
   font-weight: 800;
 }
 
-.fotostomatopoda {
-  border: 10px solid blue;
+main {
+  display: inline-block;
+  border: 2px solid black;
+  width: 78%;
+  height: 100%;
+  position: fixed;
+}
+
+img[src="imagens/primeirafoto.jpg"] {
+  display: inline-block;
+  border: 2px solid blue;
+  width: 41%;
+  height: 41%;
+}
+
+#right-photo {
+  display: inline-block;
+  border: 2px solid pink;
+  height: 385px;
+  width: 45%;
+  height: 41%;
+  position: fixed;
+}
+
+section p {
+  font-style: italic;
+}
+
+#general-info {
+  width: auto;
+  height: 335px;
+  padding-top: 100px; 
+}
+
+table, th, td {
+  border: 1px solid black;
 }
 
