@@ -31,7 +31,7 @@ main {
   border: 2px solid black;
   width: 78%;
   height: 100%;
-  position: fixed;
+  position: absolute;
 }
 
 img[src="imagens/primeirafoto.jpg"] {
@@ -47,7 +47,7 @@ img[src="imagens/primeirafoto.jpg"] {
   height: 385px;
   width: 45%;
   height: 41%;
-  position: fixed;
+  position: absolute;
 }
 
 section p {
@@ -81,13 +81,31 @@ table, th, td {
 
 #vision {
   border: 2px solid red;
-  position: 
-  height: 125px;
+  height: 375px;
   width: 735px;
   display: inline-block;
 }
 
+#vision img {
+  padding-left: 200px;
+}
 
 
+
+#punch {
+  border: 2px solid black;
+  width: 680px;
+  height: 380px;
+  display: inline-block;
+  position: absolute;
+}
+
+#punch h4 {
+  text-align: center;
+}
+
+#punch img {
+ padding-left: 80px;
+}
 
 
