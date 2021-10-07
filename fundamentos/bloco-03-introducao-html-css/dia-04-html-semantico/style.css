@@ -64,3 +64,30 @@ table, th, td {
   border: 1px solid black;
 }
 
+#interesting-facts-area {
+  border: 1px solid black;
+  height: 400px;
+  width: 1430px;
+  display: inline-block
+}
+
+#interesting-facts-area h3 {
+  text-align: center;
+}
+
+#vision h4 {
+  text-align: center;
+}
+
+#vision {
+  border: 2px solid red;
+  position: 
+  height: 125px;
+  width: 735px;
+  display: inline-block;
+}
+
+
+
+
+
