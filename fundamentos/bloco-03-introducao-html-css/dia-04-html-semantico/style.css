@@ -14,12 +14,12 @@ header {
   width: 100%;
 }
 
-nav {
+#nav {
   background-color: orangered;
   text-align: right;
 }
 
-nav li {
+#nav li {
   display: inline;
   margin: 10px;
   font-size: large;
@@ -28,44 +28,56 @@ nav li {
 
 main {
   display: inline-block;
-  border: 2px solid black;
   width: 78%;
   height: 100%;
   position: absolute;
+  background-color: orange;
 }
 
 img[src="imagens/primeirafoto.jpg"] {
   display: inline-block;
-  border: 2px solid blue;
   width: 41%;
   height: 41%;
 }
 
 #right-photo {
   display: inline-block;
-  border: 2px solid pink;
   height: 385px;
   width: 45%;
   height: 41%;
   position: absolute;
+  
 }
 
-section p {
+#right-photo h2 {
+  padding-left: 225px;
+
+}
+
+#right-photo p {
   font-style: italic;
+  padding-left: 235px;
+}
+
+#right-photo h2, #right-photo p {
+  background-color: orangered;
+  padding-right: 200px;
+
 }
 
 #general-info {
   width: auto;
   height: 335px;
-  padding-top: 100px; 
+  padding-top: 50px;
+  padding-left: 200px; 
 }
 
 table, th, td {
   border: 1px solid black;
+  text-align: center;
 }
 
 #interesting-facts-area {
-  border: 1px solid black;
   height: 400px;
   width: 1430px;
   display: inline-block
@@ -80,7 +92,7 @@ table, th, td {
 }
 
 #vision {
-  border: 2px solid red;
+
   height: 375px;
   width: 735px;
   display: inline-block;
@@ -93,7 +105,6 @@ table, th, td {
 
 
 #punch {
-  border: 2px solid black;
   width: 680px;
   height: 380px;
   display: inline-block;
@@ -107,5 +118,14 @@ table, th, td {
 #punch img {
  padding-left: 80px;
 }
+
+#footer {
+  display: inline;
+}
+
+#refs li {
+  display: inline;
+}
+
 
 
