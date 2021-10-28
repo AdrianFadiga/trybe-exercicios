@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class='formulary'>
+      <form action="" method="GET">
+    <fieldset>
+        <label for='name'>Informe seu nome</label>
+        <input type="text" name='name' id='name' maxlength="40" required>
+        <br>
+        <label for='email'>Informe seu e-mail</label>
+        <input type="email" name='e-mail' id='name' required>
+        <br>
+        <label for='cpf'>Informe seu CPF</label>
+        <input type='number' name='cpf' id='cpf' required>
+        <br>
+        <label for='address'>Informe seu endereço</label>
+        <input type="text" name='address' id='address' required>
+        <br>
+        <label for='city'>Informe sua cidade</label>
+        <input type='text' name='city' id='city' required>
+        <br>
+        <label for='estados'>Informe seu Estado</label>
+        <select name='estados' id='estados' required>
+        </select>
+    </fieldset>
+    </section>
+    <section class='curriculum-data'>
+      <fieldset>
+        <label for='experiencia'>Resuma seu curriculum</label>
+        <br>
+        <textarea maxlength="1000" name='experiencia' id='curriculum' required>
+        </textarea>
+        <br>
+        <label for='position'>Última posição profissional</label>
+        <br>
+        <input type="text" name='position' id='position' maxlength="40" required>
+        <br>
+        <label for='position-description'>Descreva seu último cargo</label>
+        <br>
+        <input type='text' name='position-description' id='position-description' maxlength="500" required>
+        <br>
+        <label for='start-date'>Data de início</label>
+        <br>
+        <input type="date" name='start-date' id='start-date' required>
+      </fieldset>
+    </section>
+    <button type="submit" id='btn'>Enviar informações</button>
+  </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
