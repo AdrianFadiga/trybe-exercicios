@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
-<header class="container mb-3">
+<header class="container text-center bg-success">
   <h1>Formulário de aplicação para emprego</h1>
 </header>
 <body>
   <main>
-    <section class='container mb-3'>
-      <form action="" method="GET" class='m-3 form-text row'>
+    <section class='container mb-3 form-text'>
+      <form action="" method="GET" class=''>
+        <div class='m-3'>
         <label for='name' class='form-label'>Informe seu nome</label>
         <input type="text" name='name' id='name' maxlength="40" class='form-control' required>        
         <label for='email' class='form-label'>Informe seu e-mail</label>
@@ -31,27 +32,30 @@
         <label for='estados' class='form-label'>Informe seu Estado</label>
         <select name='estados' class="form-control" id='estados' required>
         </select>
+      </div>
     </section>
-    <section class='container mb-3'>      
-        <label for='experiencia'>Resuma seu curriculum</label>        
-        <textarea maxlength="1000" name='experiencia' id='curriculum' required>
+    <section class='container mb-3 form-text'> 
+      <div class='row m-3'>     
+        <label for='experiencia' class='form-label'>Resuma seu curriculum</label>        
+        <textarea maxlength="1000" class="form-control" name='experiencia' id='curriculum' required>
         </textarea>
         
-        <label for='position'>Última posição profissional</label>
+        <label for='position' class='form-label'>Última posição profissional</label>
         
-        <input type="text" name='position' id='position' maxlength="40" required>
+        <input type="text" name='position' id='position' maxlength="40" class="form-control" required>
         
-        <label for='position-description'>Descreva seu último cargo</label>
+        <label for='position-description' class='form-label'>Descreva seu último cargo</label>
         
-        <input type='text' name='position-description' id='position-description' maxlength="500" required>
+        <input type='text' name='position-description' class="form-control" id='position-description' maxlength="500" required>
         
-        <label for='start-date'>Data de início</label>
+        <label for='start-date' class='form-label'>Data de início</label>
         
-        <input type="date" name='start-date' id='start-date' required>
+        <input type="date" class="form-control" name='start-date' id='start-date' required>
+      </div>
   
     </section>
-    <div class="container">
-      <button type="submit" id='btn'>Enviar informações</button>
+    <div class="container text-center">
+      <button type="submit" class="btn btn-outline-secondary bg-success text-white" id='btn'>Enviar informações</button>
     </div>
   </form>
   </main>
