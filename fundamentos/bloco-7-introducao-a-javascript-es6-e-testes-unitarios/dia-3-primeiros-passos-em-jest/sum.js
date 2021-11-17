@@ -24,8 +24,36 @@ function myFizzBuzz(num) {
   return num;
 }
 
-console.log(myFizzBuzz('tey'));
+const encode = (param) => {
+  param = param.split('');
+  for (let i = 0; i < param.length; i+= 1) {
+    if (param[i] === 'a') {param[i] = 1};
+    if (param[i] === 'e') {param[i] = 2};
+    if (param[i] === 'i') {param[i] = 3};
+    if (param[i] === 'o') {param[i] = 4};
+    if (param[i] === 'u') {param[i] = 5};
+
+  }
+  return param.join('');
+}
+
+const decode = (param) => {
+  param = param.split('');
+  for (let i = 0; i < param.length; i+= 1) {
+    if (param[i] == 1) {param[i] = 'a'};
+    if (param[i] == 2) {param[i] = 'e'};
+    if (param[i] == 3) {param[i] = 'i'};
+    if (param[i] == 4) {param[i] = 'o'};
+    if (param[i] == 5) {param[i] = 'u'};
+  }
+  return param.join('');
+};
+
+const techList = (tech, name) => {
 
 
+}
 
-module.exports = { sum, myRemove, myFizzBuzz }
+console.log(techList(['CSS', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Adrian'));
+
+module.exports = { sum, myRemove, myFizzBuzz, encode, decode }

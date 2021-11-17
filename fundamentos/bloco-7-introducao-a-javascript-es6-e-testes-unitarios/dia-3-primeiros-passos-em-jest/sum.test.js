@@ -1,6 +1,6 @@
 // sum.test.js
 const { test, expect } = require('@jest/globals');
-const { sum, myRemove, myFizzBuzz } = require('./sum.js');
+const { sum, myRemove, myFizzBuzz, encode, decode } = require('./sum.js');
 
 //Ex 1
 describe('Testa a função sum', () => {
@@ -48,5 +48,21 @@ describe('Testa a função myFizzBuzz', () => {
   });
   test('Verifica se uma chamada sem número retorna false', () => {
     expect(myFizzBuzz('tey')).toBe(false);
-  })
+  });
 });
+
+//Ex 4
+describe('Testa as funções encode e decode', () => {
+  test('Verifica se encode e decode são funções', () => {
+    expect(typeof encode && typeof decode).toBe('function');
+  });
+  test('Verifica se as vogais a,e,i,o,u são convertidas em 1, 2, 3, 4 e 5, respectivamente', () => {
+    expect(encode('aeiou')).toBe('12345');
+  });
+  test('Verifica se os números 1,2,3,4,5 são convertidos em a,e,i,o,u, respectivamente', () => {
+    expect(decode('12345')).toBe('aeiou');
+  });
+  test('Verifica se a string retornada pela função encode têm o mesmo número de caracteres que a string passada como parâmetro', () => {
+    expect(encode('aeiou').length).toBe(5)
+  })
+  });
