@@ -9,3 +9,13 @@ function addEstados () {
 }
 
 addEstados();
+
+let elementSection = document.querySelectorAll('section');
+function addBorder () {
+  for (let i = 0; i < elementSection.length; i += 1) {
+    elementSection[i].classList.add('border')
+  }
+}
+
+addBorder();
+
