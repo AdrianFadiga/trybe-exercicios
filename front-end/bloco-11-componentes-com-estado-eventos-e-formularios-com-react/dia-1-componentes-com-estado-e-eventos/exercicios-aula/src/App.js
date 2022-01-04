@@ -2,56 +2,56 @@ import './App.css';
 import React from 'react';
 
 class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      botaoUm: 0,
-      botaoDois: 0,
-      botaoTres: 0,
-    }
-    this.contadorBotaoUm = this.contadorBotaoUm.bind(this);
-    this.contadorBotaoDois = this.contadorBotaoDois.bind(this);
-    this.contadorBotaoTres = this.contadorBotaoTres.bind(this);
+constructor () {
+  super()
+  this.state = {
+    contadorUm: 0,
+    contadorDois: 0,
+    contadorTres: 0,
   }
+  this.contadorClickUm = this.contadorClickUm.bind(this);
+  this.contadorClickDois = this.contadorClickDois.bind(this);
+  this.contadorClickTres = this.contadorClickTres.bind(this);
+}
 
-  contadorBotaoUm () {
-    this.setState((estadoAtual, _props) => ({
-      botaoUm: estadoAtual.botaoUm +1
-    }))
-    if (this.state.botaoUm % 2 !== 0 && this.state.botaoUm !== 0) {
-      console.log(this.state.botaoUm + 1);
-    }
-  }
-  contadorBotaoDois () {
-    this.setState((estadoAtual, _props) => ({
-      botaoDois: estadoAtual.botaoDois +1
-    }))
-    if (this.state.botaoDois % 2 !== 0 && this.state.botaoDois !== 0) {
-      console.log(this.state.botaoDois + 1);
-    }
-  }
-  contadorBotaoTres () {
-    this.setState((estadoAtual, _props) => ({
-      botaoTres: estadoAtual.botaoTres +1
-    }))
-    if (this.state.botaoTres % 2 !== 0 && this.state.botaoTres !== 0) {
-      console.log(this.state.botaoTres + 1);
-    }
-  }
+contadorClickUm() {
+  this.setState((estadoAnterior, _props) => ({
+    contadorUm: estadoAnterior.contadorUm + 1
+  }))
+  console.log(this.changeColor(this.state.contadorUm +1))
+}
 
-  changeColor () {
+contadorClickDois() {
+  this.setState((estadoAnterior, _props) => ({
+    contadorDois: estadoAnterior.contadorDois + 1
+  }))
 
-  }
+}
 
-  render() {
-    return (
-      <div>
-      <button onClick={this.contadorBotaoUm} style={{ backgroundColor: 'red' }}>{this.state.botaoUm}</button>
-      <button onClick={this.contadorBotaoDois} style={{ backgroundColor: 'red' }}>{this.state.botaoDois}</button>
-      <button onClick={this.contadorBotaoTres} style={{ backgroundColor: 'red' }}>{this.state.botaoTres}</button>
-      </div>
-    )
+contadorClickTres() {
+  this.setState((estadoAnterior, _props) => ({
+    contadorTres: estadoAnterior.contadorTres + 1
+  }))
+}
+
+changeColor(num) {
+  if (num % 2 === 0) {
+    return 'green'
   }
+  return 'white'
+}
+
+render() {
+  const { contadorUm, contadorDois, contadorTres } = this.state
+  return(
+    <div>
+    <button onClick={this.contadorClickUm} style={{ backgroundColor: this.changeColor(contadorUm) }}>{contadorUm}</button>
+    <button onClick={this.contadorClickDois} style={{ backgroundColor: this.changeColor(contadorDois) }}>{contadorDois}</button>
+    <button onClick={this.contadorClickTres} style={{ backgroundColor: this.changeColor(contadorTres) }}>{contadorTres}</button>
+    </div>
+  )
+}
+
 }
 
 export default App;
