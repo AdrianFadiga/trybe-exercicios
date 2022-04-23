@@ -9,9 +9,6 @@ const getSimpsons = async () => {
     .then((res) => JSON.parse(res));
 };
 
-const addNewSimpson = async (id, name) => {
-}
-
 app.get('/simpsons/:id', async (req, res) => {
     const { id } = req.params;
     const simpsons = await getSimpsons();
@@ -42,4 +39,4 @@ app.post('/simpsons', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(PORT);
-})
+});
