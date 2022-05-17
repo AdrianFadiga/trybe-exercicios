@@ -15,7 +15,17 @@ const getById = async (id) => {
   return result;
 };
 
+const addNewBook = async ({title, author, pageQuantity}) => {
+  const result = await Book.create({
+    title,
+    author,
+    pageQuantity
+  });
+  return result; 
+}
+
 module.exports = {
   getAll,
   getById,
+  addNewBook,
 }
