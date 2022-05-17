@@ -18,12 +18,24 @@ const getById = async (req, res, next) => {
 
 const addNewBook = async (req, res) => {
   const { title, author, pageQuantity } = req.body;
-  const teste = await booksService.addNewBook({title, author, pageQuantity});
+  await booksService.addNewBook({title, author, pageQuantity});
   return res.status(201).json({message: 'Criou'});
+};
+
+const updateBook = async (req, res, next) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const { id } = req.params;
+    await booksService.updateBook({title, author, pageQuantity}, id);
+    return res.status(200).json({message: 'Book updated'});
+  } catch(err) {
+    next(err);
+  };
 }
 
 module.exports = {
   getAll,
   getById,
   addNewBook,
+  updateBook,
 };

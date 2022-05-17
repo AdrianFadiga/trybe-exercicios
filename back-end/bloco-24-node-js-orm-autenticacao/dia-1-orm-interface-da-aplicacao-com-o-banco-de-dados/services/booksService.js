@@ -22,10 +22,18 @@ const addNewBook = async ({title, author, pageQuantity}) => {
     pageQuantity
   });
   return result; 
+};
+
+const updateBook = async ({title, author, pageQuantity}, id) => {
+  const result = await getById(id);
+  if (!result.length) throw {message: 'Book not found', status: 404};
+  await Book.update({title, author, pageQuantity}, {where: {id}})
+  return;
 }
 
 module.exports = {
   getAll,
   getById,
   addNewBook,
+  updateBook,
 }
