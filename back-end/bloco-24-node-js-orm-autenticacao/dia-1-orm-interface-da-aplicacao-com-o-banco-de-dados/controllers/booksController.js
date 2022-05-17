@@ -31,6 +31,16 @@ const updateBook = async (req, res, next) => {
   } catch(err) {
     next(err);
   };
+};
+
+const deleteBook = async (req, res, next) => {
+  try {
+  const {id} = req.params
+  await booksService.deleteBook(id);
+  return res.status(204).send();
+  } catch (err) {
+    next(err);
+  }
 }
 
 module.exports = {
@@ -38,4 +48,5 @@ module.exports = {
   getById,
   addNewBook,
   updateBook,
+  deleteBook,
 };

@@ -6,6 +6,8 @@ app.use(express.json());
 
 const booksController = require('./controllers/booksController');
 
+app.delete('/books/:id', booksController.deleteBook);
+
 app.put('/books/:id', booksController.updateBook);
 
 app.post('/books', booksController.addNewBook);

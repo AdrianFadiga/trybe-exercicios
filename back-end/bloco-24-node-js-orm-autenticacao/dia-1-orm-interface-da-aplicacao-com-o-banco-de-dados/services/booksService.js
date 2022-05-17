@@ -29,6 +29,13 @@ const updateBook = async ({title, author, pageQuantity}, id) => {
   if (!result.length) throw {message: 'Book not found', status: 404};
   await Book.update({title, author, pageQuantity}, {where: {id}})
   return;
+};
+
+const deleteBook = async (id) => {
+  const result = await getById(id);
+  if (!result.length) throw {status: 404, message: 'Não existe um livro com o id'};
+  await Book.destroy({where: {id}});
+  return;
 }
 
 module.exports = {
@@ -36,4 +43,5 @@ module.exports = {
   getById,
   addNewBook,
   updateBook,
+  deleteBook,
 }
