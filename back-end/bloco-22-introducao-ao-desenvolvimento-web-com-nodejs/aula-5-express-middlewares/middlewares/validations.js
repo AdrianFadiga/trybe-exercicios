@@ -1,19 +1,34 @@
+const Joi = require('joi');
+
 const isValidUsername = (req, res, next) => {
     const { username } = req.body;
     if (!username || username.length <= 3) return res.status(400).json({message: "invalid data"});
     next();
 };
 
+const joiEmail = Joi.object({
+    email: Joi.string().email().required(),
+});
+
 const isValidEmail = (req, res, next) => {
     const { email } = req.body;
-    if (!email || !email.includes('@') || !email.includes('.com')) return res.status(400).json({message: "invalid data"});
+    const { error } = joiEmail.validate({email});
+    if (error) return next({status: 400, message: error.message});
     next();
 };
 
+const joiPassword = Joi.object({
+    password: Joi.string()
+    .min(4)
+    .max(8)
+    .required()
+});
+
 const isValidPassword = (req, res, next) => {
     const { password } = req.body;
-    if(!password || password.length > 8 || password.length < 4) return res.status(400).json({message: "invalid data"});
-    next();
+    const { error } = joiPassword.validate({ password });
+    if (error) return next({status: 400, message: error.message});
+    return next();
 };
 
 const isValidToken = (req, res, next) => {
@@ -39,6 +54,8 @@ const isValidCountry = (req, res, next) => {
     if (!country || country.length < 3) return res.status(400).json({message: "invalid data"});
     next();
 };
+
+
 
 module.exports = ({
     isValidUsername,

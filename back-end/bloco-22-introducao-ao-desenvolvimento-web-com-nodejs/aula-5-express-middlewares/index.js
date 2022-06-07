@@ -13,6 +13,10 @@ app.use('/btc', btcRouter);
 
 app.use('/teams', teamsRouter);
 
+app.use((error, req, res, next) => {
+    if (error.status) return res.status(error.status).json({message: error.message});
+    return res.status(500).json({message: error.message});
+});
 
 app.listen(PORT, () => {
     console.log(`O PAI TA ON NA ${PORT}`);
